@@ -1,0 +1,79 @@
+<div class="container d-flex align-content-end flex-wrap my-5">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+            <div class="card  shadow bg-white rounded">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Register Here</h2>
+                    <form [formGroup]="registerForm" class="form" (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <label class="form-label font-weight-bold">Enter mobile number</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text text-danger" id="basic-addon1">
+                                    <i class="fa fa-mobile"></i>
+                                </span>
+                                <input type="text" class="form-control" formControlName="mobileNumber"
+                                    placeholder="Enter mobile number" autofoucs>
+                            </div>
+                            <span class="text-danger"
+                                *ngIf="(registerFormControl.mobileNumber.touched || submitted) && registerFormControl.mobileNumber.errors?.required">
+                                Mobile number is required
+                            </span>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label font-weight-bold">Enter name</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text text-danger" id="basic-addon1">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                                <input type="text" formControlName="name" class="form-control"
+                                    placeholder="Enter your name" autofoucs>
+                            </div>
+
+                            <span class="text-danger mb-3"
+                                *ngIf="(registerFormControl.name.touched || submitted) && registerFormControl.name.errors?.required">
+                                Name is required
+                            </span>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label font-weight-bold">Enter email</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text text-danger" id="basic-addon1">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                                <input type="text" formControlName="email" class="form-control"
+                                    placeholder="Enter your email" autofoucs>
+                            </div>
+
+                            <span class="text-danger mb-3"
+                                *ngIf="(registerFormControl.email.touched || submitted) && registerFormControl.email.errors?.required">
+                                Email is required
+                            </span>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label font-weight-bold">Enter Password</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text text-danger" id="basic-addon1">
+                                    <i class="fa fa-lock"></i>
+                                </span>
+                                <input type="password" formControlName="password" 
+                                       class="form-control" placeholder="Enter password"
+                                    autofoucs>
+                            </div>
+
+                            <span class="text-danger mb-3"
+                                *ngIf="(registerFormControl.password.touched || submitted) && registerFormControl.password.errors?.required">
+                                Password is required
+                            </span>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-block btn-outline-success">
+                                REGISTER
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <app-get-record *ngIf="getRecord"></app-get-record>
+        </div>
+    </div>
+</div>

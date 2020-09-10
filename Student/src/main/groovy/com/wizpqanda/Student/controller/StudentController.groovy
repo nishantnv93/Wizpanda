@@ -1,6 +1,10 @@
 package com.wizpqanda.Student.controller
 
+import com.wizpqanda.Student.Exceptions.RecordNotFound
+import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.CrossOrigin
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 
@@ -27,13 +31,14 @@ class StudentController {
 
     @GetMapping("/getrecords")
     @Produces(MediaType.APPLICATION_JSON)
-    public Student getStudent(){
+    public List<Student> getStudent(){
         return studentService.getStudentRecord();
     }
 
     @PostMapping("/saverecord")
     @Produces(MediaType.APPLICATION_JSON)
-    public Student saveStudent(@RequestBody Student student){
+    public List<Student> saveStudent(@RequestBody Student student){
         return studentService.saveStudentRecord(student);
     }
+
 }

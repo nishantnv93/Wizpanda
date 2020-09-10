@@ -21,9 +21,9 @@ class Student {
 
     private String email;
 
-    private int mobileNumber;
+    private String mobileNumber;
 
-    private String password;
+    private String role;
 
     public int getId() {
         return id
@@ -49,19 +49,19 @@ class Student {
         this.email = email;
     }
 
-    public int getMobileNumber() {
+    public String getMobileNumber() {
         return mobileNumber;
     }
 
-    public void setMobileNumber(int mobileNumber) {
+    public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
 
-    public String getPassword() {
-        return password;
+    public String getRole() {
+        return role
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setRole(String role) {
+        this.role = role;
     }
 }

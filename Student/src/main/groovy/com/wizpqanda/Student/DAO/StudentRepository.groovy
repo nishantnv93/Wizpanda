@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface StudentRepository extends JpaRepository<Student, Integer> {
+    public List<Student> findByMobilenumber(String mobileNumber);
 }
